@@ -5,3 +5,4 @@
 2. Install Extentions
 3. Create React App
 4. Create Git Repository
+5. List of Products on page
