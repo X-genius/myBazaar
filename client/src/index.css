@@ -15,10 +15,21 @@ main {
   flex: 1;
 }
 
+.btn-primary {
+  color: #000000;
+  background-color: #f0c040;
+  font-weight: 600;
+  border: none;
+}
+
 .products {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.rating span {
+  color: #ffc000;
 }
 
 .product {
