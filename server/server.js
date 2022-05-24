@@ -1,5 +1,6 @@
 import express from 'express';
 import mongoose from 'mongoose';
+import path from 'path';
 import dotenv from 'dotenv';
 import seedRouter from './routes/seedRoute.js';
 import ProductRouter from './routes/productRoute.js';
@@ -26,6 +27,12 @@ app.use('/api/seed', seedRouter);
 app.use('/api/products', ProductRouter);
 app.use('/api/users', UserRouter);
 app.use('/api/orders', orderRouter);
+
+const __dirname = path.resolve();
+app.use(express.static(path.join(__dirname, '/client/build')));
+app.get('*', (req, res) =>
+  res.sendFile(path.join(__dirname, '/client/build/index.html'))
+);
 
 app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });
