@@ -27,7 +27,7 @@ function SignupScreen() {
     e.preventDefault();
 
     if (password !== confirmPassword) {
-      toast.error('Password don not match');
+      toast.error('Password do not match');
       return;
     }
 
